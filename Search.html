@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: rgba(255, 155, 238, 0.986);
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            var memName = [
+                {id: "6231302007", name: "Thiti Subsuksamran"},
+                {id: "6231302024", name: "Wasitpon Saithanya "},
+                {id: "6231302025", name: "Thitiya Jina"},
+                {id: "6231302027", name: "Prinnada Comewinit"}
+            ]
+            $("button").click(function(){
+                var search;
+                search = $("#txtSearch").val();
+                for(i in memName){
+                    if(search == memName[i].id){
+                    $("#show").html(`ID: ${memName[i].id} Name: ${memName[i].name}`)
+                }
+                }
+                
+            })
+        });
+        
+    </script>
+</head>
+
+<body>
+    <div class="jumbotron text-center" style="margin-bottom:0 ;background-color: aqua;">
+
+        <h1>Score</h1>
+
+    </div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+       
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="About.html">About </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="score.html">Score</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+           <nav class="navbar navbar-expand-sm navbar-dark bg-dark" >
+            <div class="form-group "  >
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" id="txtSearch">
+                <button class="btn btn-outline-success my-2 my-sm-2" type="button" >Search</button>
+            </div>
+           </nav>
+            
+    <h2 id="show"></h2>
+</body>
+
+</html>
