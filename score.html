@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+    <h1>Give score for each member</h1>
+    <h2>5 = Excellent , 1 = Very poor</h2>
+    <br>
+
+    <label for="m1">Member1 :</label>
+    
+<select id="m1">
+  <option value="5">5</option>
+  <option value="4">4</option>
+  <option value="3">3</option>
+  <option value="2">2</option>
+  <option value="1">1</option>
+</select> 
+
+<br>
+
+<label for="m2">Member2 :</label>
+
+<select id="m2">
+  <option value="5">5</option>
+  <option value="4">4</option>
+  <option value="3">3</option>
+  <option value="2">2</option>
+  <option value="1">1</option>
+</select>
+
+ <br>
+
+<label for="m3">Member3 :</label>
+
+<select id="m3">
+  <option value="5">5</option>
+  <option value="4">4</option>
+  <option value="3">3</option>
+  <option value="2">2</option>
+  <option value="1">1</option>
+</select> 
+<br>
+
+<label for="m4">Member4 :</label>
+
+<select id="m4">
+  <option value="5">5</option>
+  <option value="4">4</option>
+  <option value="3">3</option>
+  <option value="2">2</option>
+  <option value="1">1</option>
+</select> 
+
+<br><br>
+
+<button class="btn btn-primary" id="btsubmit">submit</button>
+<br><br>
+<p id="show">Average score</p>
+
+
+
+<script>
+    $(document).ready(function() {
+        $("#btsubmit").click(function() {
+        
+        var getm1 = parseInt($("#m1 option:selected").val())
+        var getm2 = parseInt($("#m2 option:selected").val())
+        var getm3 = parseInt($("#m3 option:selected").val())
+        var getm4 = parseInt($("#m4 option:selected").val())
+
+        var totalscore = getm1+getm2+getm3+getm4;
+        var average = totalscore/4;
+        $("#show").text("Score Average: "+average);
+    });
+});
+        
+</script>
+
+</body>
+</html>
